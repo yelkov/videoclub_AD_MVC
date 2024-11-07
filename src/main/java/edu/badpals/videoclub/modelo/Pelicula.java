@@ -71,7 +71,6 @@ public class Pelicula {
         String colorear = isDisponible() ? "\033[1;32m" : "\033[1;31m";
         String finColor = "\033[0m";
 
-        sb.append("\n\tPelícula:");
         sb.append("\n\t\tTítulo: " + colorear + titulo + finColor);
         sb.append("\n\t\tProtagonista: " + protagonista);
         sb.append("\n\t\tTemática: " + tematica.getNombre());
