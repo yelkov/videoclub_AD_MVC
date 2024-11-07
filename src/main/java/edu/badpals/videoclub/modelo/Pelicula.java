@@ -67,12 +67,16 @@ public class Pelicula {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+
+        String colorear = isDisponible() ? "\033[1;32m" : "\033[1;31m";
+        String finColor = "\033[0m";
+
         sb.append("\n\tPelícula:");
-        sb.append("\n\t\tTítulo: " + titulo);
+        sb.append("\n\t\tTítulo: " + colorear + titulo + finColor);
         sb.append("\n\t\tProtagonista: " + protagonista);
         sb.append("\n\t\tTemática: " + tematica.getNombre());
         sb.append("\n\t\tDescripción: " + descripcion);
-        sb.append("\n\t\tDisponible: " + (isDisponible()? "Sí":"No"));
+        sb.append("\n\t\tDisponible: " + colorear + (isDisponible()? "Sí":"No") +finColor);
         return sb.toString();
     }
 }
