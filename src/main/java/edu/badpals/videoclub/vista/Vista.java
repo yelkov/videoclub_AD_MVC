@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Vista {
     public void bienvenida(){
-        System.out.println("""
+        String plantilla = """
                 ╔══════════════════════════════════════════════════════════════════════════════════════╗
                 ║    ██╗   ██╗ ██╗ ██████╗  ███████╗  ██████╗   ██████╗ ██╗      ██╗   ██╗ ██████╗     ║
                 ║    ██║   ██║ ██║ ██╔══██╗ ██╔════╝ ██╔═══██╗ ██╔════╝ ██║      ██║   ██║ ██╔══██╗    ║
@@ -17,7 +17,29 @@ public class Vista {
                 ╚══════════════════════════════════════════════════════════════════════════════════════╝
                 ┌──────────────────────────────────────────────────────────────────────────────────────┐
                 │                             ¡Bienvenido a nuestro videoclub!                         │
-                └──────────────────────────────────────────────────────────────────────────────────────┘""");
+                └──────────────────────────────────────────────────────────────────────────────────────┘
+                                                           \\ /
+                                                            v
+                                                           ┌─┐┐
+                                                   ╔══════════════════╗_
+                                                   ║%s║ \\
+                                                   ║%s║º │
+                                                   ║%s║º │
+                                                   ║%s║º │
+                                                   ╚══════════════════╝──┘
+                                                                                                          """;
+        String colores = generarRGB();
+        String saludo = String.format(plantilla, colores, colores, colores, colores);
+        System.out.println(saludo);
+    }
+
+    private String generarRGB(){
+        String fondorRojo = "\033[1;41m";
+        String fondorVerde = "\033[1;42m";
+        String fondorAzul = "\033[1;44m";
+        String sinFondo = "\033[0m";
+        String rgb = fondorRojo+ "      " + fondorVerde + "      " + fondorAzul + "      " + sinFondo;
+        return rgb;
     }
 
     public int mostrarMenu(){
@@ -43,15 +65,16 @@ public class Vista {
                            \t\t\t\t\t\t┌────────────────────────────────────────┐
                            \t\t\t\t\t\t│      MENÚ DE CONSULTA DE PELÍCULA      │
                            \t\t\t\t\t\t│────────────────────────────────────────│
-                           \t\t\t\t\t\t│%s│
+                           \t\t\t\t\t\t│%s\033[1;0m│
                            \t\t\t\t\t\t│────────────────────────────────────────│
                            \t\t\t\t\t\t│ 1. Mostrar detalles de la película     │
                            \t\t\t\t\t\t│ 2. Modificar datos                     │
                            \t\t\t\t\t\t│ 3. Eliminar película                   │
                            \t\t\t\t\t\t│ 4. Volver                              │
                            \t\t\t\t\t\t└────────────────────────────────────────┘""";
-        int longitud_fija = 40;
-        String titulo = pelicula.getTitulo();
+        int longitud_fija = 47;
+        String color = "\033[1;34m";
+        String titulo = color + pelicula.getTitulo();
         StringBuilder sb = new StringBuilder(titulo);
         while(sb.length() < longitud_fija){
             sb.append(" ");

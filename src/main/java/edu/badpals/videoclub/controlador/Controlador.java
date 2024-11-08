@@ -23,15 +23,19 @@ public class Controlador {
                     vista.mostrarPeliculas(catalogo);
                     break;
                 case 2:
-                    int idPelicula = Peticiones.pedirIdPelicula();
+                    Integer idPelicula = Peticiones.pedirIdPelicula();
+                    if (idPelicula == null){
+                        vista.mostrarMensaje("Proceso abortado");
+                        break;
+                    }
                     Pelicula pelicula = modelo.selectPelicula(idPelicula);
                     if(pelicula == null){
                         vista.mostrarMensaje("La película con id: "+ idPelicula + " no existe.");
-                    }else{
+                    }else {
                         int accion = 1;
-                        while(accion == 1 || accion == 5){
+                        while (accion == 1 || accion == 5) {
                             accion = vista.mostrarMenuConsulta(pelicula);
-                            consultar(accion,pelicula);
+                            consultar(accion, pelicula);
                         }
                     }
                     break;

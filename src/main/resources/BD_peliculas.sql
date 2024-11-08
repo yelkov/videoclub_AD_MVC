@@ -17,7 +17,6 @@ CREATE TABLE IF NOT EXISTS PELICULAS
 )ENGINE INNODB;
 
 INSERT INTO PELICULAS (TITULO, ACTOR, TEMATICA, GUION, DISPONIBLE) VALUES
-('Cadena Perpetua', 'Tim Robbins', 'Drama', 'Andy Dufresne, condenado injustamente, lucha por sobrevivir y encontrar esperanza en prisión.', TRUE),
 ('El Padrino', 'Marlon Brando', 'Acción', 'La historia de la familia Corleone y su imperio mafioso en Nueva York.', TRUE),
 ('El Caballero Oscuro', 'Christian Bale', 'Acción', 'Batman lucha contra el caos del Joker en Gotham City.', TRUE),
 ('La Lista de Schindler', 'Liam Neeson', 'Aventura', 'Oskar Schindler salva a más de mil judíos durante el Holocausto.', TRUE),
@@ -33,7 +32,5 @@ INSERT INTO PELICULAS (TITULO, ACTOR, TEMATICA, GUION, DISPONIBLE) VALUES
 ('Gladiador', 'Russell Crowe', 'Acción', 'Maximus busca venganza en la arena del Coliseo tras la muerte de su familia.', FALSE),
 ('Salvad al Soldado Ryan', 'Tom Hanks', 'Aventura', 'Un grupo de soldados busca rescatar a un paracaidista en la Segunda Guerra Mundial.', TRUE),
 ('El Silencio de los Corderos', 'Jodie Foster', 'Terror', 'Una joven agente del FBI consulta al caníbal Hannibal Lecter para capturar a un asesino en serie.', TRUE),
-('La Milla Verde', 'Tom Hanks', 'Drama', 'Un oficial de prisión se enfrenta al destino de un prisionero con poderes especiales.', TRUE),
 ('El Rey León', 'Matthew Broderick', 'Aventura', 'Simba regresa para reclamar su trono como rey de la Sabana.', TRUE),
-('Infiltrados', 'Leonardo DiCaprio', 'Acción', 'Un policía y un criminal se infiltran en las filas del enemigo, pero ninguno sabe quién es el otro.', FALSE),
-('Whiplash', 'Miles Teller', 'Drama', 'Un joven baterista enfrenta la presión extrema de su maestro en busca de la perfección.', TRUE);
+('Infiltrados', 'Leonardo DiCaprio', 'Acción', 'Un policía y un criminal se infiltran en las filas del enemigo, pero ninguno sabe quién es el otro.', FALSE),;

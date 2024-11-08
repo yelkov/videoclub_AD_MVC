@@ -32,11 +32,12 @@ public class Peticiones {
     }
 
     public static Integer pedirIdPelicula(){
-        Scanner sc = new Scanner(System.in);
-        Integer respuesta = 0;
-        System.out.print("Ingrese el id de la película: ");
+        Integer respuesta = null;
+
         int intentos = 0;
         while(intentos < 3){
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Ingrese el id de la película: ");
             try{
                 respuesta = sc.nextInt();
                 return respuesta;
@@ -49,7 +50,7 @@ public class Peticiones {
                 }
             }
         }
-        return null;
+        return respuesta;
     }
 
     public static int pedirRespuestaConsulta(){
