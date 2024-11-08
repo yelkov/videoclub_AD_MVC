@@ -15,7 +15,7 @@ public class Controlador {
         modelo.conectarBD();
         vista.bienvenida();
         int respuesta = 0;
-        while(respuesta != 5){
+        while(respuesta != 4){
             respuesta = vista.mostrarMenu();
             switch (respuesta){
                 case 1:
