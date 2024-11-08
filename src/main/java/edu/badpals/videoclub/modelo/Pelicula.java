@@ -1,7 +1,9 @@
 package edu.badpals.videoclub.modelo;
 
+import java.util.Objects;
+
 public class Pelicula {
-    private int id;
+    private Integer id;
     private String titulo;
     private String protagonista;
     private Tematica tematica;
@@ -9,6 +11,15 @@ public class Pelicula {
     private boolean disponible;
 
     public Pelicula(String titulo, String protagonista, Tematica tematica, String descripcion, boolean disponible) {
+        this.titulo = titulo;
+        this.protagonista = protagonista;
+        this.tematica = tematica;
+        this.descripcion = descripcion;
+        this.disponible = disponible;
+    }
+
+    public Pelicula(Integer id, String titulo, String protagonista, Tematica tematica, String descripcion, boolean disponible) {
+        this.id = id;
         this.titulo = titulo;
         this.protagonista = protagonista;
         this.tematica = tematica;
@@ -72,6 +83,9 @@ public class Pelicula {
         String finColor = "\033[0m";
 
         sb.append("\n\t\tTítulo: " + colorear + titulo + finColor);
+        if(this.id != null){
+            sb.append("\n\t\tId: " + id);
+        }
         sb.append("\n\t\tProtagonista: " + protagonista);
         sb.append("\n\t\tTemática: " + tematica.getNombre());
         sb.append("\n\t\tDescripción: " + descripcion);
